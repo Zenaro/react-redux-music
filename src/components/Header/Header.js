@@ -31,7 +31,9 @@ export const Header = () => (
           <div className="top-search">
               <i className="icn-search"></i>
               <input type="text" placeholder="单曲/歌手/专辑/歌单/用户"/>
-              <ul className="result"></ul>
+              <ul className="dropdown-search">
+                <li>test -- tesatst</li>
+              </ul>
           </div>
           <div className="top-user">
               <Link to="/login" className="btn btn-info">登录</Link>
@@ -47,7 +49,7 @@ export const Header = () => (
           </div>
       </div>
     </div>
-    <div className="sub-list">
+    <div className="sub-banner">
         <div className="center">
             <ul className="sub-nav">
                 <li><a className="active" href="javascript:;">推荐</a></li>
