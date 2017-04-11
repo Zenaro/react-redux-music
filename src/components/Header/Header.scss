@@ -9,7 +9,7 @@ $imgUrlPrefix: 'http://om6mucew9.bkt.clouddn.com/'; // 七牛云静态资源服�
 	$banner-h: 80px;
 	$sub-banner-h: $wrap-height - $banner-h;
 	width: 100%;
-	height: 115px;
+	height: $wrap-height;
 	min-width: $wrap-width;
 	.center {
 		width: $wrap-width;
@@ -47,7 +47,7 @@ $imgUrlPrefix: 'http://om6mucew9.bkt.clouddn.com/'; // 七牛云静态资源服�
 					}
 					&.active {
 						color: #fff;
-						background: #31C27C;
+						background: #5CB85C;
 					}
 				}
 			}
@@ -182,6 +182,7 @@ $imgUrlPrefix: 'http://om6mucew9.bkt.clouddn.com/'; // 七牛云静态资源服�
 		ul.sub-nav {
 			margin-left: 190px;
 			font-size: 15px;
+			overflow: hidden;
 			li {
 				padding: 0 15px;
 				color: #03DEDB;

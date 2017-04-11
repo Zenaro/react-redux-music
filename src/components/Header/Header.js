@@ -36,7 +36,7 @@ export const Header = () => (
               </ul>
           </div>
           <div className="top-user">
-              <Link to="/login" className="btn btn-info">登录</Link>
+              <Link to="/login" className="btn btn-success">登录</Link>
               <Link to="/reg" className="btn btn-default">注册</Link>
               <div className="user-memb">
                   <h4>用户</h4>
