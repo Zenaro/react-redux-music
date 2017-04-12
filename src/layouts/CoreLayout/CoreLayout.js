@@ -16,10 +16,10 @@ export const CoreLayout = ({
     <Footer/>
     <Player/>
   </div>
-)
+);
 
 CoreLayout.propTypes = {
 	children: React.PropTypes.element.isRequired
-}
+};
 
 export default CoreLayout

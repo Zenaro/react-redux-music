@@ -1,6 +1,6 @@
 import React from 'react';
-import './Player.scss';
-import defaultAlbum from './assets/default_album.jpg';
+import './../Player.scss';
+import defaultAlbum from '../assets/default_album.jpg';
 
 export const Player = () => (
   <div className="audio-player bottom-bar">

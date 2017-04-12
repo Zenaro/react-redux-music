@@ -51,10 +51,8 @@ export const Home = (props) => (
 )
 
 // ############################------
-// Home.propTypes = {
-//   counter: React.PropTypes.number.isRequired,
-//   doubleAsync: React.PropTypes.func.isRequired,
-//   increment: React.PropTypes.func.isRequired
-// }
+Home.propTypes = {
+  counter: React.PropTypes.number.isRequired
+};
 
 export default Home
