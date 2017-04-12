@@ -1,4 +1,5 @@
 import React from 'react';
+import './Player.scss';
 import defaultAlbum from './assets/default_album.jpg';
 
 export const Player = () => (
@@ -29,17 +30,17 @@ export const Player = () => (
             <div className="rdy" style={{width: 30 + '%'}}></div>
             <div className="cur" draggable="true">
               <div className="cur-inner" style={{width: 20 + '%'}}>
-										<span className="btn-cur">
-											{1 && <i></i>}
-										</span>
+										<a className="btn-cur">
+											{1 && <i className="loading"></i>}
+										</a>
               </div>
             </div>
           </div>
-							<span className="clock">
-								<i>{'00:00'}</i>
-								<span> / </span>
-								<em>{'00:00'}</em>
-							</span>
+          <div className="clock">
+            <i>{'01:23'}</i>
+            <span> / </span>
+            <em>{'04:56'}</em>
+          </div>
         </div>
       </div>
       <div className="play-ctrl">
@@ -52,12 +53,8 @@ export const Player = () => (
           </div>
         </div>
         <a href="javascript:;" className="icon-vol" title="音量"></a>
-        <a href="javascript:;"
-           className="">
-        </a>
-        <div className="">
-
-        </div>
+        <a href="javascript:;" className="icon-shuffle"></a>
+        <div className="lop-hint"></div>
       </div>
     </div>
   </div>
