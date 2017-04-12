@@ -2,7 +2,7 @@ import React from 'react'
 // import DuckImage from '../assets/Duck.jpg'
 import './Home.scss'
 
-export const Home = () => (
+export const Home = (props) => (
   <div>
     <div className="wrap">
     	<div className="cloumn main-top">
@@ -10,6 +10,7 @@ export const Home = () => (
       <div className="column main-hot">
         <div className="section">
           <h3>热门歌单<span>PLAYLIST</span></h3>
+          <span>a{props.counter}</span>
           <ul className="hot-list" id="hot-list">
           	{[1, 2, 3].map((index, value) => {
           		return (
@@ -49,6 +50,7 @@ export const Home = () => (
   </div>
 )
 
+// ############################------
 // Home.propTypes = {
 //   counter: React.PropTypes.number.isRequired,
 //   doubleAsync: React.PropTypes.func.isRequired,
