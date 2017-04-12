@@ -15,13 +15,13 @@ export const Header = () => (
     </Link>*/}
     <div className="header-banner center">
       <h1>
-          <Link to="/">Kono tone</Link>
+          <Link to="/">Kono tune</Link>
       </h1>
       <ul className="nav">
           <li><IndexLink to="/" className="active">发现音乐</IndexLink></li>
           <li><Link to="/login">我的音乐</Link></li>
           <li>
-            <a href="http://7xstax.com1.z0.glb.clouddn.com/Music-Effect.zip" 
+            <a href="http://7xstax.com1.z0.glb.clouddn.com/Music-Effect.zip"
               download="http://7xstax.com1.z0.glb.clouddn.com/Music-Effect.zip">
               下载客户端
             </a>
@@ -62,6 +62,6 @@ export const Header = () => (
         </div>
     </div>
   </div>
-)
+);
 
 export default Header
