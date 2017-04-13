@@ -1,6 +1,19 @@
-import React from 'react'
+import React from 'react';
 // import DuckImage from '../assets/Duck.jpg'
-import './Home.scss'
+import './Home.scss';
+import IMG_CREATE from '../assets/musicCreate.jpg';
+import IMG_NEW from '../assets/musicNew.jpg';
+import IMG_UP from '../assets/musicUp.jpg';
+const RANK_INFO = [{
+  img: IMG_CREATE,
+  text: '流行'
+}, {
+  img: IMG_UP,
+  text: '新歌'
+}, {
+  img: IMG_NEW,
+  text: '欧美'
+}]
 
 export const Home = (props) => (
   <div>
@@ -26,12 +39,13 @@ export const Home = (props) => (
             <h3>排行榜<span>RANKLIST</span></h3>
             <div className="rank">
             	{
-            		[1, 2, 3].map((index, value)=> {
+            		RANK_INFO.map((value, index)=> {
+                  console.log(index);
             			return (
 										<dl className="rank-blk" key={index}>
 		                  <dt className="top">
 		                    <a href="javascript:;" className="dt-img">
-		                    	<img src="item.logo" alt=""/>
+		                    	<img src={value.img} alt=""/>
 		                    </a>
 		                    <div className="dt-txt">
 		                      <a href="javascript:;" className="title" data-text="item.title"></a>
