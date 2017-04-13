@@ -12,7 +12,7 @@ export default (store) => ({
 			    dependencies for bundling   */
 			const container = require('./containers/container').default;
 			const counterReducer = require('./modules/reducer').default.counterReducer;
-			const musicListReducer = require('./modules/reducer').default.musicListReducer;
+			const musicListReducer = require('./modules/reducer').default.homeDataReducer;
 
 			/*  Add the reducer to the store on key 'counter'  */
 			injectReducer(store, {

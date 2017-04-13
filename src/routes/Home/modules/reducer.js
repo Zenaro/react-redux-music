@@ -67,16 +67,12 @@ export default {
     // const handler = ACTION_HANDLERS[action.type];
     // return handler ? handler(state, action) : state
   },
-  musicListReducer: function(state = {
-    musicList: []
-  }, action) {
+  homeDataReducer: function(state = [], action) {
     switch (action.type) {
       case 'PUSH':
-        return state.push('1');
-      case COUNTER_DOUBLE_ASYNC:
-        return state.pop();
+        return state.push();
       default:
-        return [];
+        return state;
     }
   }
 }
