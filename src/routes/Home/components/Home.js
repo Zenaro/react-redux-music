@@ -24,6 +24,7 @@ export const Home = (props) => (
         <div className="section">
           <h3>热门歌单<span>PLAYLIST</span></h3>
           <span>a{props.counter}</span>
+          <button onClick={props.increment}></button>
           <ul className="hot-list" id="hot-list">
           	{[1, 2, 3].map((index, value) => {
           		return (
@@ -40,7 +41,6 @@ export const Home = (props) => (
             <div className="rank">
             	{
             		RANK_INFO.map((value, index)=> {
-                  console.log(index);
             			return (
 										<dl className="rank-blk" key={index}>
 		                  <dt className="top">
@@ -48,7 +48,7 @@ export const Home = (props) => (
 		                    	<img src={value.img} alt=""/>
 		                    </a>
 		                    <div className="dt-txt">
-		                      <a href="javascript:;" className="title" data-text="item.title"></a>
+		                      <a href="javascript:;" className="title">{value.text}</a>
 		                      <a href="javascript:;" className="icon icon-play"></a>
 		                      <a href="javascript:;" className="icon icon-store" data-type="item.dataType"></a>
 		                    </div>
@@ -68,5 +68,4 @@ export const Home = (props) => (
 Home.propTypes = {
   counter: React.PropTypes.number.isRequired
 };
-
 export default Home

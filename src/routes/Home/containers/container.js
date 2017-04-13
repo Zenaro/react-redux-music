@@ -3,8 +3,9 @@ import {
 } from 'react-redux'
 import {
   increment,
-  doubleAsync
-} from '../modules/counter'
+  musicListPush,
+  musicListPop
+} from '../modules/reducer'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -19,11 +20,13 @@ import Home from '../components/Home'
 
 const mapDispatchToProps = {
   increment: () => increment(1),
-  doubleAsync
+  musicListPush,
+  musicListPop
 };
 
 const mapStateToProps = (state) => ({
-  counter: state.counter
+  counter: state.counter,
+  musicList: state.musicList
 });
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

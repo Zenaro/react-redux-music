@@ -1,6 +1,6 @@
 import Home from './components/Home'
 import {
-  injectReducer
+	injectReducer
 } from '../../store/reducers'
 // Sync route definition
 export default (store) => ({
@@ -10,17 +10,24 @@ export default (store) => ({
 		require.ensure([], (require) => {
 			/*  Webpack - use require callback to define
 			    dependencies for bundling   */
-			const Counter = require('./containers/CounterContainer').default;
-			const reducer = require('./modules/counter').default;
+			const container = require('./containers/container').default;
+			const counterReducer = require('./modules/reducer').default.counterReducer;
+			const musicListReducer = require('./modules/reducer').default.musicListReducer;
 
 			/*  Add the reducer to the store on key 'counter'  */
 			injectReducer(store, {
 				key: 'counter',
-				reducer
+				reducer: counterReducer
 			});
 
+			/*  Add the reducer to the store on key 'musicList'  */
+			injectReducer(store, {
+				key: 'musicList',
+				reducer: musicListReducer
+			})
+
 			/*  Return getComponent   */
-			cb(null, Counter);
+			cb(null, container);
 
 			/* Webpack named bundle   */
 		}, 'counter')
