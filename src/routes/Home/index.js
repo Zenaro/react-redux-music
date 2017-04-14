@@ -11,25 +11,25 @@ export default (store) => ({
 			/*  Webpack - use require callback to define
 			    dependencies for bundling   */
 			const container = require('./containers/container').default;
-			const counterReducer = require('./modules/reducer').default.counterReducer;
-			const musicListReducer = require('./modules/reducer').default.homeDataReducer;
+			// const counterReducer = require('./modules/reducer').default.counterReducer;
+			const rankListReducer = require('./modules/reducer').default.rankListReducer;
 
 			/*  Add the reducer to the store on key 'counter'  */
-			injectReducer(store, {
-				key: 'counter',
-				reducer: counterReducer
-			});
+			// injectReducer(store, {
+			// 	key: 'counter',
+			// 	reducer: counterReducer
+			// });
 
 			/*  Add the reducer to the store on key 'musicList'  */
 			injectReducer(store, {
-				key: 'musicList',
-				reducer: musicListReducer
+				key: 'rankList',
+				reducer: rankListReducer
 			})
 
 			/*  Return getComponent   */
 			cb(null, container);
 
 			/* Webpack named bundle   */
-		}, 'counter')
+		}, 'rankList')
 	}
 });

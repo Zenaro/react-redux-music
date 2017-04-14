@@ -2,9 +2,7 @@ import {
   connect
 } from 'react-redux'
 import {
-  increment,
-  musicListPush,
-  musicListPop
+  rankListInit
 } from '../modules/reducer'
 
 /*  This is a container component. Notice it does not contain any JSX,
@@ -19,14 +17,13 @@ import Home from '../components/Home'
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  increment: () => increment(1),
-  musicListPush,
-  musicListPop
+  // increment: () => increment(1),
+  rankListInit: () => rankListInit
 };
 
 const mapStateToProps = (state) => ({
-  counter: state.counter,
-  musicList: state.musicList
+  // counter: state.counter,
+  rankList: state.rankList
 });
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

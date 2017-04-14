@@ -1,9 +1,18 @@
 import React from 'react';
-// import DuckImage from '../assets/Duck.jpg'
 import './Home.scss';
+import IMG_HOT1 from '../assets/banner-1.jpg';
+import IMG_HOT2 from '../assets/banner-2.jpg';
+import IMG_HOT3 from '../assets/banner-3.jpg';
 import IMG_CREATE from '../assets/musicCreate.jpg';
 import IMG_NEW from '../assets/musicNew.jpg';
 import IMG_UP from '../assets/musicUp.jpg';
+const HOT_INTO = [{
+  img: IMG_HOT1
+}, {
+  img: IMG_HOT2
+}, {
+  img: IMG_HOT3
+}];
 const RANK_INFO = [{
   img: IMG_CREATE,
   text: '流行'
@@ -13,7 +22,8 @@ const RANK_INFO = [{
 }, {
   img: IMG_NEW,
   text: '欧美'
-}]
+}];
+const urlPrefix = "http://localhost/NewWorld/sql-CloudMusic/FEBE-mysql-old/BackEnd/index.php/Home/";
 
 export const Home = (props) => (
   <div>
@@ -23,12 +33,12 @@ export const Home = (props) => (
       <div className="column main-hot">
         <div className="section">
           <h3>热门歌单<span>PLAYLIST</span></h3>
-          <span>a{props.counter}</span>
-          <button onClick={props.increment}></button>
           <ul className="hot-list" id="hot-list">
-          	{[1, 2, 3].map((index, value) => {
+          	{HOT_INTO.map((value, index) => {
           		return (
-								<li key={index}>{value}</li>
+								<li key={index}>
+                  <img src={value.img} alt=""/>
+                </li>
 	          	);
           	})}
           </ul>
@@ -40,19 +50,32 @@ export const Home = (props) => (
             <h3>排行榜<span>RANKLIST</span></h3>
             <div className="rank">
             	{
-            		RANK_INFO.map((value, index)=> {
+            		props.rankList.map((value, index)=> {
             			return (
 										<dl className="rank-blk" key={index}>
 		                  <dt className="top">
 		                    <a href="javascript:;" className="dt-img">
-		                    	<img src={value.img} alt=""/>
+		                    	<img src={RANK_INFO[index].img} alt=""/>
 		                    </a>
 		                    <div className="dt-txt">
-		                      <a href="javascript:;" className="title">{value.text}</a>
+		                      <a href="javascript:;" className="title">{RANK_INFO[index].text}</a>
 		                      <a href="javascript:;" className="icon icon-play"></a>
 		                      <a href="javascript:;" className="icon icon-store" data-type="item.dataType"></a>
 		                    </div>
 		                  </dt>
+                      {value.map((val, ind) => {
+                        return (
+                          <dd data-id={val.id} key={ind}>
+                            <span>{ind + 1}</span>
+                            <a href="javascript:;" className="title">{val.title}</a>
+                            <div className="dd-oper">
+                              <a href="javascript:;" className="icon-play"></a>
+                              <a href="javascript:;" className="icon-add"></a>
+                              <a href="javascript:;" className="icon-store"></a>
+                            </div>
+                          </dd>
+                        );
+                      })}
 			              </dl>
             			);
             		})
@@ -66,6 +89,6 @@ export const Home = (props) => (
 
 // ############################------
 Home.propTypes = {
-  counter: React.PropTypes.number.isRequired
+  rankList: React.PropTypes.array.isRequired
 };
 export default Home
