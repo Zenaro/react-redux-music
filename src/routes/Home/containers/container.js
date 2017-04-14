@@ -2,7 +2,8 @@ import {
   connect
 } from 'react-redux'
 import {
-  rankListInit
+  rankListInit,
+  rankListAdd
 } from '../modules/reducer'
 
 /*  This is a container component. Notice it does not contain any JSX,
@@ -17,8 +18,8 @@ import Home from '../components/Home'
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  // increment: () => increment(1),
-  rankListInit: () => rankListInit
+  rankListInit,
+  rankListAdd
 };
 
 const mapStateToProps = (state) => ({

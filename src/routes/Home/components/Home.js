@@ -47,39 +47,38 @@ export const Home = (props) => (
 
       <div className="column main-rank">
         <div className="section">
-            <h3>排行榜<span>RANKLIST</span></h3>
+            <h3 onClick={props.rankListAdd}>排行榜<span>RANKLIST</span></h3>
             <div className="rank">
-            	{
-            		props.rankList.map((value, index)=> {
-            			return (
-										<dl className="rank-blk" key={index}>
-		                  <dt className="top">
-		                    <a href="javascript:;" className="dt-img">
-		                    	<img src={RANK_INFO[index].img} alt=""/>
-		                    </a>
-		                    <div className="dt-txt">
-		                      <a href="javascript:;" className="title">{RANK_INFO[index].text}</a>
-		                      <a href="javascript:;" className="icon icon-play"></a>
-		                      <a href="javascript:;" className="icon icon-store" data-type="item.dataType"></a>
-		                    </div>
-		                  </dt>
-                      {value.map((val, ind) => {
-                        return (
-                          <dd data-id={val.id} key={ind}>
-                            <span>{ind + 1}</span>
-                            <a href="javascript:;" className="title">{val.title}</a>
-                            <div className="dd-oper">
-                              <a href="javascript:;" className="icon-play"></a>
-                              <a href="javascript:;" className="icon-add"></a>
-                              <a href="javascript:;" className="icon-store"></a>
-                            </div>
-                          </dd>
-                        );
-                      })}
-			              </dl>
-            			);
-            		})
-            	}
+              <span>{props.rankList}</span>
+            	{/*props.rankList.map((value, index)=> {
+          			return (
+									<dl className="rank-blk" key={index}>
+	                  <dt className="top">
+	                    <a href="javascript:;" className="dt-img">
+	                    	<img src={RANK_INFO[index].img} alt=""/>
+	                    </a>
+	                    <div className="dt-txt">
+	                      <a href="javascript:;" className="title">{RANK_INFO[index].text}</a>
+	                      <a href="javascript:;" className="icon icon-play"></a>
+	                      <a href="javascript:;" className="icon icon-store" data-type="item.dataType"></a>
+	                    </div>
+	                  </dt>
+                    {value.map((val, ind) => {
+                      return (
+                        <dd data-id={val.id} key={ind}>
+                          <span>{ind + 1}</span>
+                          <a href="javascript:;" className="title">{val.title}</a>
+                          <div className="dd-oper">
+                            <a href="javascript:;" className="icon-play"></a>
+                            <a href="javascript:;" className="icon-add"></a>
+                            <a href="javascript:;" className="icon-store"></a>
+                          </div>
+                        </dd>
+                      );
+                    })}
+		              </dl>
+          			);
+          		})*/}
             </div>
         </div>
       </div>
@@ -89,6 +88,7 @@ export const Home = (props) => (
 
 // ############################------
 Home.propTypes = {
-  rankList: React.PropTypes.array.isRequired
+  rankList: React.PropTypes.number.isRequired,
+  rankListInit: React.PropTypes.func.isRequired
 };
 export default Home
