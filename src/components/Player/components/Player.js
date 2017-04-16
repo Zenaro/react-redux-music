@@ -54,7 +54,25 @@ export const Player = () => (
         </div>
         <a href="javascript:;" className="icon-vol" title="音量"></a>
         <a href="javascript:;" className="icon-shuffle"></a>
-        <div className="lop-hint"></div>
+        <div className="lop-hint">单曲循环</div>
+        <span className="music-list">
+            <a href="javascript:;" className="icon-list" title="播放列表">0</a>
+            <em>已添加到播放列表</em>
+        </span>
+      </div>
+      <div className="play-form">
+        <div className="form-title">
+          <h3>播放列表</h3>
+          <a href="javascript:;" className="icon-colle"><span></span>收藏全部</a>
+          <span>|</span>
+          <a href="javascript:;" className="icon-empty"><span></span>清空</a>
+          <a href="javascript:;" className="icon-close" title="关闭"></a>
+        </div>
+        <div className="form-tab" id="form-tab">
+          <ul className="mtab" id="mtab"></ul>
+          <div className="empty">播放列表为空哦</div>
+        </div>
+        <div className="scrol"><span className="icon-scl"></span></div>
       </div>
     </div>
   </div>

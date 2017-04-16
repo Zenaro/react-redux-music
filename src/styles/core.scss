@@ -37,11 +37,6 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
 .btn {
   line-height: 1.4;
   $bg-color: #fff;

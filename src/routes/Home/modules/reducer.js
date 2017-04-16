@@ -1,14 +1,14 @@
 import fetch from 'isomorphic-fetch';
 const urlPrefix = 'http://localhost/NewWorld/sql-CloudMusic/FEBE-mysql-old/BackEnd/index.php/Home/';
 
+// ------------------------------------
+// 流行榜 - 新歌榜 - 原创榜 歌单的加载Actions
+// ------------------------------------
 export const RANKLIST_INIT = 'RANKLIST_INIT';
 
 export const REQUEST_RANKLIST = 'REQUEST_RANKLIST'; /// 请求
 export const RECEIVE_RANKLIST = 'RECEIVE_RANKLIST'; // 接收
 
-// ------------------------------------
-// Actions
-// ------------------------------------
 function reqRankList(subreddit) {
   return {
     type: REQUEST_RANKLIST,
