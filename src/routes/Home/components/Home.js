@@ -47,10 +47,9 @@ export const Home = (props) => (
 
       <div className="column main-rank">
         <div className="section">
-            <h3 onClick={props.rankListAdd}>排行榜<span>RANKLIST</span></h3>
+            <h3 onClick={props.rankListInit}>排行榜<span>RANKLIST</span></h3>
             <div className="rank">
-              <span>{props.rankList}</span>
-            	{/*props.rankList.map((value, index)=> {
+            	{props.rankList.map((value, index)=> {
           			return (
 									<dl className="rank-blk" key={index}>
 	                  <dt className="top">
@@ -64,10 +63,11 @@ export const Home = (props) => (
 	                    </div>
 	                  </dt>
                     {value.map((val, ind) => {
+                      let className = ind % 2 == 0 ? 'even' : 'odd';
                       return (
-                        <dd data-id={val.id} key={ind}>
+                        <dd data-id={val.music_id} key={ind} className={className}>
                           <span>{ind + 1}</span>
-                          <a href="javascript:;" className="title">{val.title}</a>
+                          <a href="javascript:;" className="title">{val.name}</a>
                           <div className="dd-oper">
                             <a href="javascript:;" className="icon-play"></a>
                             <a href="javascript:;" className="icon-add"></a>
@@ -78,7 +78,7 @@ export const Home = (props) => (
                     })}
 		              </dl>
           			);
-          		})*/}
+          		})}
             </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ export const Home = (props) => (
 
 // ############################------
 Home.propTypes = {
-  rankList: React.PropTypes.number.isRequired,
+  rankList: React.PropTypes.array.isRequired,
   rankListInit: React.PropTypes.func.isRequired
 };
 export default Home
