@@ -51,15 +51,14 @@ export const doubleAsync = () => {
 const initialState = 0;
 export default function reducer(state = initialState, action) {
   /*const handler = ACTION_HANDLERS[action.type];
-
   return handler ? handler(state, action) : state*/
   switch (action.type) {
     case COUNTER_INCREMENT:
-          return state + action.payload;
+      return state + action.payload;
     case COUNTER_DOUBLE_ASYNC:
-          return state * 2;
+      return state * 2;
     default:
-          return state;
+      return state;
 
   }
 }

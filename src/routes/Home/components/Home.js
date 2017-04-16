@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  Component
+} from 'react';
 import './Home.scss';
 import IMG_HOT1 from '../assets/banner-1.jpg';
 import IMG_HOT2 from '../assets/banner-2.jpg';
@@ -15,18 +17,18 @@ const HOT_INTO = [{
 }];
 const RANK_INFO = [{
   img: IMG_CREATE,
-  text: '流行'
+  text: '流行榜'
 }, {
   img: IMG_UP,
-  text: '新歌'
+  text: '新歌榜'
 }, {
   img: IMG_NEW,
-  text: '欧美'
+  text: '原创榜'
 }];
 const urlPrefix = "http://localhost/NewWorld/sql-CloudMusic/FEBE-mysql-old/BackEnd/index.php/Home/";
 
 export const Home = (props) => (
-  <div>
+  <div onLoad={props.rankListInit}>
     <div className="wrap">
     	<div className="cloumn main-top">
       </div>
@@ -47,22 +49,22 @@ export const Home = (props) => (
 
       <div className="column main-rank">
         <div className="section">
-            <h3 onClick={props.rankListInit}>排行榜<span>RANKLIST</span></h3>
+            <h3>排行榜<span>RANKLIST</span></h3>
             <div className="rank">
-            	{props.rankList.map((value, index)=> {
+            	{RANK_INFO.map((value, index)=> {
           			return (
 									<dl className="rank-blk" key={index}>
 	                  <dt className="top">
 	                    <a href="javascript:;" className="dt-img">
-	                    	<img src={RANK_INFO[index].img} alt=""/>
+	                    	<img src={value.img} alt=""/>
 	                    </a>
 	                    <div className="dt-txt">
-	                      <a href="javascript:;" className="title">{RANK_INFO[index].text}</a>
-	                      <a href="javascript:;" className="icon icon-play"></a>
-	                      <a href="javascript:;" className="icon icon-store" data-type="item.dataType"></a>
+	                      <a href="javascript:;" className="title">{value.text}</a>
+	                      <a href="javascript:;" className="icon icon-play" data-type={index}></a>
+	                      <a href="javascript:;" className="icon icon-store" data-type={index}></a>
 	                    </div>
 	                  </dt>
-                    {value.map((val, ind) => {
+                    {props.rankList[index].map((val, ind) => {
                       let className = ind % 2 == 0 ? 'even' : 'odd';
                       return (
                         <dd data-id={val.music_id} key={ind} className={className}>
@@ -86,9 +88,8 @@ export const Home = (props) => (
   </div>
 )
 
-// ############################------
 Home.propTypes = {
   rankList: React.PropTypes.array.isRequired,
   rankListInit: React.PropTypes.func.isRequired
 };
-export default Home
+export default Home;
