@@ -1,7 +1,6 @@
 $dir: './assets';
 .audio-player {
-  border: solid 1px;
-  border-top-color: #15212C;
+  border-top: solid 1px #15212C;
   background: #293B4D;
   position: fixed;
   height: 50px;
@@ -277,8 +276,8 @@ $dir: './assets';
       width: 480px;
       height: 300px;
       color: #979697;
-      font-size: 13px;
-      background: #2a2a2a;
+      font-size: 12px;
+      background: #293B4D;
       position: absolute;
       // display: none;
       border-top-left-radius: 5px;
@@ -292,164 +291,166 @@ $dir: './assets';
         line-height: 36px;
         overflow: hidden;
         border-bottom: solid 1px #000;
-        .form-title {
-          h3, a, span {
-            float: left;
+        h3, a, span {
+          margin: 0;
+          float: left;
+        }
+        h3{
+          width: 270px;
+          margin-left: 10px;
+          font-size: 17px;
+        }
+        a {
+          color: #aaa;
+        }
+        a:hover{
+          color: #ddd;
+        }
+        a.icon-colle{
+          width: 75px;
+          font-size: 12px;
+        }
+        a.icon-empty{
+          width: 65px;
+          font-size: 12px;
+        }
+        a > span{
+          height: 16px;
+          margin: 10px 2px;
+          display: block;
+          background: url($dir + '/playlist.png') no-repeat;
+        }
+        a.icon-colle span{
+          width: 18px;
+          background-position: -24px 1px;
+        }
+        a.icon-empty span{
+          width: 16px;
+          background-position: -51px 2px;
+        }
+        span{
+          color: #191919;
+          margin: 0 5px;
+        }
+        a.icon-close{
+          width: 25px;
+          height: 100%;
+          float: right;
+          cursor: pointer;
+          background: url($dir + '/playlist.png');
+          background-position: -195px 14px;
+          &:hover{
+            background-position: -195px -16px;
           }
-          h3{
-            width: 270px;
-            margin-left: 10px;
-            font-size: 17px;
-          }
-          a:hover{
-            color: #ddd;
-          }
-          a.icon-colle{
-            width: 75px;
-            font-size: 12px;
-          }
-          a.icon-empty{
-            width: 65px;
-            font-size: 12px;
-          }
-          a > span{
-            height: 16px;
-            margin: 10px 2px;
-            display: block;
-            background: url($dir + '/playlist.png') no-repeat;
-          }
-          a.icon-colle span{
-            width: 18px;
-            background-position: -24px 1px;
-          }
-          a.icon-empty span{
-            width: 16px;
-            background-position: -51px 2px;
-          }
-          span{
-            color: #191919;
-            margin: 0 5px;
-          }
-          a.icon-close{
-            width: 25px;
-            height: 100%;
-            float: right;
+        }
+      }
+      .form-tab{
+        width: 470px;
+        height: 260px;
+        float: left;
+        position: relative;
+        overflow: hidden;
+        ul.mtab{
+          width: 100%;
+          position: absolute;
+          li{
+            width: 100%;
+            height: 30px;
             cursor: pointer;
-            background: url($dir + '/playlist.png');
-            background-position: -195px 13px;
+            overflow: hidden;
             &:hover{
-              background-position: -195px -17px;
+              color: #eee;
+              background: #222;
+            }
+            .abs-stus{
+              width: 25px;
+              height: 30px;
+              position: absolute;
+              display: none;
+              span.icn-stus{
+                width: 10px;
+                height: 13px;
+                display: block;
+                margin: 9px 0 0 8px;
+                background: url($dir + '/playlist.png');
+                background-position: -182px 0;
+              }
+            }
+            .col{
+              float: left;
+              height: 30px;
+              line-height: 30px;
+            }
+            .txtOF {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            .col-1{
+              width: 48%;
+              text-indent: 25px;
+            }
+            .col-2{
+              width: 17%;
+              a{
+                width: 20px;
+                height: 20px;
+                margin: 5px 3px;
+                display: none;
+                float: left;
+                background: url($dir + '/playlist.png');
+                &.icn-col{
+                  background-position: -23px 2px;
+                  &:hover{
+                    background-position: -23px -18px;
+                  }
+                }
+                &.icn-dwn{
+                  background-position: -55px -48px;
+                  &:hover{
+                    background-position: -78px -48px;
+                  }
+                }
+                &.icn-del{
+                  background-position: -48px 3px;
+                  &:hover{
+                    background-position: -48px -17px;
+                  }
+                }
+              }
+            }
+            .col-3{
+              width: 23%;
+            }
+            .col-4{
+              width: 8%;
+              float: right;
+              margin-right: 5px;
             }
           }
         }
-        .form-tab{
-          width: 470px;
+        .empty {
+          text-align: center;
+          margin: 10px auto;
+        }
+        .scrol{
+          width: 6px;
           height: 260px;
-          float: left;
+          padding-right: 2px;
+          border-radius: 5px;
+          cursor: pointer;
+          float: right;
+          background: #111;
           position: relative;
           overflow: hidden;
-          ul.mtab{
-            width: 100%;
-            position: absolute;
-            li{
-              width: 100%;
-              height: 30px;
-              cursor: pointer;
-              overflow: hidden;
-              &:hover{
-                color: #eee;
-                background: #222;
-              }
-              .abs-stus{
-                width: 25px;
-                height: 30px;
-                position: absolute;
-                display: none;
-                span.icn-stus{
-                  width: 10px;
-                  height: 13px;
-                  display: block;
-                  margin: 9px 0 0 8px;
-                  background: url($dir + '/playlist.png');
-                  background-position: -182px 0;
-                }
-              }
-              .col{
-                float: left;
-                height: 30px;
-                line-height: 30px;
-              }
-              .txtOF {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-              }
-              .col-1{
-                width: 48%;
-                text-indent: 25px;
-              }
-              .col-2{
-                width: 17%;
-                a{
-                  width: 20px;
-                  height: 20px;
-                  margin: 5px 3px;
-                  display: none;
-                  float: left;
-                  background: url($dir + '/playlist.png');
-                  &.icn-col{
-                    background-position: -23px 2px;
-                    &:hover{
-                      background-position: -23px -18px;
-                    }
-                  }
-                  &.icn-dwn{
-                    background-position: -55px -48px;
-                    &:hover{
-                      background-position: -78px -48px;
-                    }
-                  }
-                  &.icn-del{
-                    background-position: -48px 3px;
-                    &:hover{
-                      background-position: -48px -17px;
-                    }
-                  }
-                }
-              }
-              .col-3{
-                width: 23%;
-              }
-              .col-4{
-                width: 8%;
-                float: right;
-                margin-right: 5px;
-              }
-            }
-          }
-          .empty {
-            text-align: center;
-            margin: 10px auto;
-          }
-          .scrol{
+          display: none;
+          .icon-scl{
             width: 6px;
-            height: 260px;
-            padding-right: 2px;
+            height: auto;
+            margin: 0 5px 12px 0;
+            position: absolute;
             border-radius: 5px;
-            cursor: pointer;
-            float: right;
-            background: #111;
-            position: relative;
-            overflow: hidden;
-            display: none;
-            .icon-scl{
-              width: 6px;
-              height: auto;
-              margin: 0 5px 12px 0;
-              position: absolute;
-              border-radius: 5px;
-              background: #ccc;
-            }
+            background: #ccc;
           }
         }
       }
