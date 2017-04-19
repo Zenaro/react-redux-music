@@ -18,12 +18,6 @@ export const createRoutes = (store) => ({
 });
 export default createRoutes
 
-
-/*export default (store) => (
-  <Route path="/" component={CoreLayout}>
-  </Route>
-)*/
-
 /*  Note: childRoutes can be chunked or otherwise loaded programmatically
     using getChildRoutes with the following signature:
 

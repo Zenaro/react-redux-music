@@ -1,29 +1,20 @@
 import {
-  connect
+	connect
 } from 'react-redux'
-// import {
-//   rankListInit,
-//   rankListAdd
-// } from '../modules/reducer'
+import {
+	addPlayList
+} from '../modules/reducer'
 
 import Player from '../components/Player'
 
 function mapDispatchToProps(dispatch) {
-  return {
-    handleClick: () => dispatch({
-      type: 'increase'
-    })
-  }
+	return {
+		addPlayList: (array) => dispatch(addPlayList(array))
+	}
 };
 
 const mapStateToProps = (state) => ({
-  test: state.test
+	audio: state.audio
 });
 
-// const Component = connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Player)
-
-// export default Component;
 export default connect(mapStateToProps, mapDispatchToProps)(Player)

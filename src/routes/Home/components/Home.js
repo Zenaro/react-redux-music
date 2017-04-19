@@ -46,39 +46,39 @@ export const Home = (props) => (
 
       <div className="column main-rank">
         <div className="section">
-            <h3>排行榜<span>RANKLIST</span></h3>
-            <div className="rank">
-            	{RANK_INFO.map((value, index)=> {
-          			return (
-									<dl className="rank-blk" key={index}>
-	                  <dt className="top">
-	                    <a href="javascript:;" className="dt-img">
-	                    	<img src={value.img} alt=""/>
-	                    </a>
-	                    <div className="dt-txt">
-	                      <a href="javascript:;" className="title">{value.text}</a>
-	                      <a href="javascript:;" className="icon icon-play" data-type={index}></a>
-	                      <a href="javascript:;" className="icon icon-store" data-type={index}></a>
-	                    </div>
-	                  </dt>
-                    {props.rankList[index].map((val, ind) => {
-                      let className = ind % 2 == 0 ? 'even' : 'odd';
-                      return (
-                        <dd data-id={val.music_id} key={ind} className={className}>
-                          <span>{ind + 1}</span>
-                          <a href="javascript:;" className="title">{val.name}</a>
-                          <div className="dd-oper">
-                            <a href="javascript:;" className="icon-play"></a>
-                            <a href="javascript:;" className="icon-add"></a>
-                            <a href="javascript:;" className="icon-store"></a>
-                          </div>
-                        </dd>
-                      );
-                    })}
-		              </dl>
-          			);
-          		})}
-            </div>
+          <h3>排行榜<span>RANKLIST</span></h3>
+          <div className="rank">
+          	{RANK_INFO.map((value, index)=> {
+        			return (
+								<dl className="rank-blk" key={index}>
+                  <dt className="top">
+                    <a href="javascript:;" className="dt-img">
+                    	<img src={value.img} alt=""/>
+                    </a>
+                    <div className="dt-txt">
+                      <a href="javascript:;" className="title">{value.text}</a>
+                      <a href="javascript:;" className="icon icon-play" onClick={props.playListAdd.bind(this, props.rankList[index])}></a>
+                      <a href="javascript:;" className="icon icon-store" data-type={index}></a>
+                    </div>
+                  </dt>
+                  {props.rankList[index].map((val, ind) => {
+                    let className = ind % 2 == 0 ? 'even' : 'odd';
+                    return (
+                      <dd data-id={val.music_id} key={ind} className={className}>
+                        <span>{ind + 1}</span>
+                        <a href="javascript:;" className="title">{val.name} - {val.singer_name}</a>
+                        <div className="dd-oper">
+                          <a href="javascript:;" className="icon-play"></a>
+                          <a href="javascript:;" className="icon-add"></a>
+                          <a href="javascript:;" className="icon-store"></a>
+                        </div>
+                      </dd>
+                    );
+                  })}
+	              </dl>
+        			);
+        		})}
+          </div>
         </div>
       </div>
 	  </div>

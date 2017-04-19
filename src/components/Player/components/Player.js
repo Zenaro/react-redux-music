@@ -1,23 +1,44 @@
 import React, {
   Component
 } from 'react';
+import {
+  injectReducer
+} from '../../../store/reducers'
 import './Player.scss';
 import defaultAlbum from '../assets/default_album.jpg';
 
 export default class Player extends Component {
   componentDidMount() {
-    const {
-      store
-    } = this.context;
-    console.log(store);
+
+  }
+  componentWillMount() {
+
+  }
+  isEmptyObj(obj) {
+    for (let key in obj) {
+      return false;
+    }
+    return true;
   }
   render() {
     const {
-      test,
-      handleClick
+      store
+    } = this.context;
+    const reducer = require('../modules/reducer').default.reducer;
+    injectReducer(store, {
+      key: 'audio',
+      reducer: reducer
+    });
+    const {
+      addPlayList
     } = this.props;
+    let {
+      title,
+      singer,
+      playList
+    } = store.getState().audio;
     return (
-      <div className="audio-player bottom-bar" onClick={handleClick}>
+      <div className="audio-player bottom-bar" onClick={addPlayList}>
         <div className="audio-player-core">
           <div className="play-btns">
             <a href="javascript:;" className="prv"
@@ -36,8 +57,8 @@ export default class Player extends Component {
           </div>
           <div className="play-progress">
             <div className="pro-title">
-              <a href="javascript:;" className="title" title="曲名">{test}</a>
-              <a href="javascript:;" className="singer" title="演绎者"></a>
+              <a href="javascript:;" className="title" title="曲名">{title}</a>
+              <a href="javascript:;" className="singer" title="演绎者">{singer}</a>
             </div>
             <div className="pro-bar">
               <div className="barbg">
@@ -83,8 +104,13 @@ export default class Player extends Component {
               <a href="javascript:;" className="icon-close" title="关闭"></a>
             </div>
             <div className="form-tab" id="form-tab">
-              <ul className="mtab" id="mtab"></ul>
-              <div className="empty">播放列表为空哦</div>
+              {this.isEmptyObj(playList) &&
+                <div className="empty">播放列表为空哦</div>}
+              <ul className="mtab" id="mtab">
+                {playList.map((item, index) => {
+                  return <li key={index}>{item.name}</li>
+                })}
+              </ul>
             </div>
             <div className="scrol"><span className="icon-scl"></span></div>
           </div>
@@ -93,6 +119,9 @@ export default class Player extends Component {
     );
   }
 }
+Player.contextTypes = {
+  store: React.PropTypes.object
+};
 
 /*export const Player = (props) => (
   <div className="audio-player bottom-bar">

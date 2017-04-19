@@ -9,7 +9,7 @@ import {
 import {
   Provider
 } from 'react-redux'
-import Player from '../components/Player'
+// import Player from '../components/Player/Components/Player.js'
 
 class AppContainer extends Component {
   static propTypes = {
@@ -30,7 +30,6 @@ class AppContainer extends Component {
       <Provider store={store}>
         <div>
           <Router history={browserHistory} children={routes}/>
-          <Player/>
         </div>
       </Provider>
     )
