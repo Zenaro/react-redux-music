@@ -14,7 +14,6 @@ export const CoreLayout = ({
       {children}
     </div>
     <Footer/>
-    <Player/>
   </div>
 );
 

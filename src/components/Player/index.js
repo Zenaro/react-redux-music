@@ -1,6 +1,6 @@
-/*import Player from './components/Player';
+import Player from './components/Player';
 
-export default Player;*/
+export default Player;
 // import Player from './components/Player'
 /*import {
 	injectReducer
@@ -32,6 +32,6 @@ export default (store) => ({
 	}
 });*/
 
-import Player from './containers/container';
+/*import Player from './containers/container';
 
-export default Player;
+export default Player;*/

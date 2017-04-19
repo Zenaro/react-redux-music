@@ -6,7 +6,10 @@ import defaultAlbum from '../assets/default_album.jpg';
 
 export default class Player extends Component {
   componentDidMount() {
-
+    const {
+      store
+    } = this.context;
+    console.log(store);
   }
   render() {
     const {

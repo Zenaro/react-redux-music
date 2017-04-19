@@ -6,7 +6,6 @@ import IMG_HOT3 from '../assets/banner-3.jpg';
 import IMG_CREATE from '../assets/musicCreate.jpg';
 import IMG_NEW from '../assets/musicNew.jpg';
 import IMG_UP from '../assets/musicUp.jpg';
-import Child from './child/child';
 const HOT_INTO = [{
   img: IMG_HOT1
 }, {
@@ -24,11 +23,9 @@ const RANK_INFO = [{
   img: IMG_NEW,
   text: '原创榜'
 }];
-const urlPrefix = "http://localhost/NewWorld/sql-CloudMusic/FEBE-mysql-old/BackEnd/index.php/Home/";
 
 export const Home = (props) => (
   <div onLoad={props.rankListInit}>
-    <Child/>
     <div className="wrap">
     	<div className="cloumn main-top">
       </div>
