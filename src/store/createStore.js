@@ -3,7 +3,6 @@ import {
   compose,
   createStore
 } from 'redux';
-// import ajaxMiddleware from 'redux-ajax';
 import thunk from 'redux-thunk';
 import {
   browserHistory

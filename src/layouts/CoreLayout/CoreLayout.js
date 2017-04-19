@@ -6,10 +6,10 @@ import './CoreLayout.scss'
 import '../../styles/core.scss'
 
 export const CoreLayout = ({
-	children
+  children
 }) => (
-	<div className='container-fluid'>
-    <Header />
+  <div className='container-fluid'>
+    <Header/>
     <div className='core-layout__viewport'>
       {children}
     </div>
@@ -19,7 +19,7 @@ export const CoreLayout = ({
 );
 
 CoreLayout.propTypes = {
-	children: React.PropTypes.element.isRequired
+  children: React.PropTypes.element.isRequired
 };
 
 export default CoreLayout

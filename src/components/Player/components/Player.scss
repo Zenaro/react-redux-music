@@ -1,4 +1,4 @@
-$dir: './assets';
+$dir: '../assets';
 .audio-player {
   border-top: solid 1px #15212C;
   background: #293B4D;
@@ -279,7 +279,12 @@ $dir: './assets';
       font-size: 12px;
       background: #293B4D;
       position: absolute;
-      // display: none;
+      display: none;
+      border-width: 1px;
+      border-color: #15212c;
+      border-top-style: solid;
+      border-left-style: solid;
+      border-right-style: solid;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       top: -301px;

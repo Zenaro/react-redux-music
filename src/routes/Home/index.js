@@ -24,7 +24,7 @@ export default (store) => ({
 			injectReducer(store, {
 				key: 'rankList',
 				reducer: rankListReducer
-			})
+			});
 
 			/*  Return getComponent   */
 			cb(null, container);
