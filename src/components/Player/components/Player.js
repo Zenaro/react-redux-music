@@ -8,12 +8,6 @@ import './Player.scss';
 import defaultAlbum from '../assets/default_album.jpg';
 
 export default class Player extends Component {
-  componentDidMount() {
-
-  }
-  componentWillMount() {
-
-  }
   isEmptyObj(obj) {
     for (let key in obj) {
       return false;
