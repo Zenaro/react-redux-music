@@ -59,6 +59,9 @@ export default {
       case RECEIVE_RANKLIST:
         return Object.assign([], state, action.payload); // 数组对象无法实时render的问题
       case PLAYLIST_ADD:
+        console.log(state);
+        let newState = Object.assign({}, state);
+        console.log(newState);
         let [array, item, id] = [action.payload, {}, 0];
         for (let i = 0, length = array.length; i < length; i++) {
           item = array[i];

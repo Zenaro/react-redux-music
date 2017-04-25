@@ -34,7 +34,7 @@ export default {
 						state.playList.push(item);
 					}
 				}
-				console.log(state.playList)
+				console.log(state)
 				return Object.assign({}, state, state);
 			default:
 				return state;
