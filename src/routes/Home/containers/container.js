@@ -3,7 +3,7 @@ import {
 } from 'react-redux'
 import {
   rankListInit,
-  playListAdd
+  addPlayList
 } from '../modules/reducer'
 
 /*  This is a container component. Notice it does not contain any JSX,
@@ -19,7 +19,7 @@ import Home from '../components/Home'
 
 const mapDispatchToProps = {
   rankListInit,
-  playListAdd
+  addPlayList: (array) => dispatch(addPlayList(array))
 };
 
 const mapStateToProps = (state) => ({

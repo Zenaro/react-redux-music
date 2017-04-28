@@ -41,10 +41,10 @@ export const rankListInit = (subreddit) => {
   }
 }
 
-export const playListAdd = (array) => {
+export const addPlayList = (json = {}) => {
   return {
     type: PLAYLIST_ADD,
-    payload: array
+    payload: json
   }
 }
 
@@ -58,21 +58,21 @@ export default {
     switch (action.type) {
       case RECEIVE_RANKLIST:
         return Object.assign([], state, action.payload); // 数组对象无法实时render的问题
-      case PLAYLIST_ADD:
-        console.log(state);
-        let newState = Object.assign({}, state);
-        console.log(newState);
-        let [array, item, id] = [action.payload, {}, 0];
-        for (let i = 0, length = array.length; i < length; i++) {
-          item = array[i];
-          id = item['music_id'];
-          if (!state.playListMap[id]) {
-            state.playListMap[id] = item[i];
-            state.playList.push(item);
+        /*case PLAYLIST_ADD:
+          console.log(state);
+          let newState = Object.assign({}, state);
+          console.log(newState);
+          let [array, item, id] = [action.payload, {}, 0];
+          for (let i = 0, length = array.length; i < length; i++) {
+            item = array[i];
+            id = item['music_id'];
+            if (!state.playListMap[id]) {
+              state.playListMap[id] = item[i];
+              state.playList.push(item);
+            }
           }
-        }
-        console.log(state.playList)
-        return Object.assign({}, state, state);
+          console.log(state.playList)
+          return Object.assign({}, state, state);*/
       default:
         return state;
     }
