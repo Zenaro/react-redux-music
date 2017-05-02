@@ -9,7 +9,6 @@ import {
 import {
   Provider
 } from 'react-redux'
-// import Player from '../components/Player/Components/Player.js'
 
 class AppContainer extends Component {
   static propTypes = {
